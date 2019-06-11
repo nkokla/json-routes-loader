@@ -20,7 +20,13 @@ It's probably better if you know JSON and JavaScript. 😉
 
 ### How to use
 
-import the json-routes-loader lib...
+Install the json-routes-loader lib...
+
+```JavaScript
+npm i json-routes-loader
+```
+
+...import the lib...
 
 ```JavaScript
 import JsonRoutesLoader from 'json-routes-loader'
@@ -29,7 +35,11 @@ import JsonRoutesLoader from 'json-routes-loader'
 const myOptions = {
     // [... See below]
 }
+```
 
+... Use the lib.
+
+```JavaScript
 // Create a new provider:
 const jsonRoutesProvider = new JsonRoutesLoader(myOptions)
 
