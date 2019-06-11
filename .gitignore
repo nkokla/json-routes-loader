@@ -62,4 +62,4 @@ typings/
 
 
 # App ignore
-index.js
+/index.js

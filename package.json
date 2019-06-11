@@ -11,6 +11,10 @@
     "build": "./node_modules/.bin/babel src --out-file index.js",
     "prepublishOnly": "./node_modules/.bin/babel src --out-file index.js --minified"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkokla/json-routes-loader.git"
+  },
   "author": "Nicolas KOKLA",
   "license": "MIT",
   "devDependencies": {
