@@ -35,8 +35,9 @@ export default class JsonRoutesLoader {
       .then(data => (data && data.json()) || {})
       .catch(function(error) {
         console.error(
-          `JsonRoutesLoader Error > Failed to load remote data in '${urlData ||
-            urlRegister}' : ${error.message}`
+          `JsonRoutesLoader Error > Failed to load remote data in '${fetchUrl}' :: ${
+            error.message
+          }`
         );
       });
   }
@@ -71,21 +72,29 @@ export default class JsonRoutesLoader {
       return null;
     }
 
-    const { payload, path } = register[route];
+    const { payload } = register[route];
     const { routeFormater, payloadFormater, prefixRoutePath } = this.options;
 
     if (!payload) {
       // TODO : Move the routeFormater call on the loadRegister ?
       register[route] = await routeFormater(route, register[route]);
-      const routeData = await this._fetchData(
-        `${prefixRoutePath}${path}`,
-        _fetchOptions
-      );
-      register[route].payload = await payloadFormater(
-        this.raw,
-        register[route],
-        routeData
-      );
+      const { path } = register[route];
+      if (path) {
+        const routeData = await this._fetchData(
+          `${prefixRoutePath}${path}`,
+          _fetchOptions
+        );
+        register[route].payload = await payloadFormater(
+          this.raw,
+          register[route],
+          routeData
+        );
+      } else {
+        console.error(
+          `JsonRoutesLoader Error > The formated data for the route [${route}] do not have 'path' key.
+Add a 'path' key to this route or patch the 'routeFormater' option`
+        );
+      }
     }
 
     this.register = register;
