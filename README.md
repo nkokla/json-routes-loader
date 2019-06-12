@@ -20,9 +20,9 @@ It's probably better if you know JSON and JavaScript. 😉
 
 ### How to use
 
-Install the json-routes-loader lib...
+Install the `json-routes-loader` lib...
 
-```JavaScript
+```bash
 npm i json-routes-loader
 ```
 
@@ -72,7 +72,7 @@ const myOptions = {
   The location (relative or absolute) of data where extract the register.
 
 - **`fetchOptions`** (Object - default: `null`):  
-  If given, this object will be send as option to the fetch function. For details, you can See the documentation on MDN (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+  If given, this object will be send as option to the fetch function. For details, you can see [the documentation of `fetch` on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 - **`prefixRoutePath`** (String - default: `""`):  
   Prefixes all relative path of route set in the register.
@@ -175,7 +175,7 @@ jsonRoutesProvider.loadRoute(route[, fetchOptions])
 ```
 
 - **`route`** (String - require): The route of wanted data.
-- **`fetchOptions`** (Object - not require - default: `null`): If given, this object will be send as option to the fetch function. It overload the given or default option `fetchOptions`. For details, you can See the documentation on MDN (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+- **`fetchOptions`** (Object - not require - default: `null`): If given, this object will be send as option to the fetch function. It overload the given or default option `fetchOptions`. For details, you can see [the documentation of `fetch` on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 1. Formats the route value of the register (with the `routeFormater` option)
 2. Loads the data for a given route.
@@ -191,7 +191,7 @@ jsonRoutesProvider.loadRoutes([routes][, fetchOptions])
 ```
 
 - **`routes`** (Array of string - not require - default: `[]`): The routes of wanted data. Set an empty array (the default value) for loading all routes present in the register.
-- **`fetchOptions`** (Object - not require): If given, this object will be send as option to the fetch function. It overload the given or default option `fetchOptions`. For details, you can See the documentation on MDN (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+- **`fetchOptions`** (Object - not require): If given, this object will be send as option to the fetch function. It overload the given or default option `fetchOptions`. For details, you can see [the documentation of `fetch` on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
 
 Loads the JSON data for all given routes (with the same process of `loadRoute()`).
 
