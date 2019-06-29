@@ -4,7 +4,7 @@
   "description": "Agnostic JSON data routes loader",
   "main": "index.js",
   "bin": {
-    "json-routes-loader": "./bin/index-route.js"
+    "json-routes-loader": "./bin/json-routes-loader.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
