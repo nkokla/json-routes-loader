@@ -62,4 +62,5 @@ typings/
 
 
 # App ignore
+*.backUp
 /index.js
